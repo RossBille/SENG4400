@@ -1,8 +1,11 @@
 package com.rossbille.seng4400.assignment2.beans;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Comparator;
 
-public class Event implements Serializable
+public class Event implements Serializable, Comparable<Event>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -17,11 +20,17 @@ public class Event implements Serializable
 	}
 	public Event(){}
 	
-	public long getId() 
+	public String getDate()
+	{
+		Calendar c = Calendar.getInstance();
+		c.setTimeInMillis(this.timeStamp);
+		return new SimpleDateFormat("dd/MM/yy - HH:mm").format(c.getTime());
+	}
+	public long getTimeStamp() 
 	{
 		return timeStamp;
 	}
-	public void setId(long timeStamp) 
+	public void setTimeStamp(long timeStamp) 
 	{
 		this.timeStamp = timeStamp;
 	}
@@ -32,5 +41,10 @@ public class Event implements Serializable
 	public void setSuccess(boolean success) 
 	{
 		this.success = success;
+	}
+	@Override
+	//implements reverse order
+	public int compareTo(Event o) {
+		return Long.compare(o.getTimeStamp(), this.timeStamp);
 	}	
 }
