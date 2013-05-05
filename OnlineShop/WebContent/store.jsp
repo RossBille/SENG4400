@@ -9,6 +9,11 @@
 <body>
 	<div>
 		Hi, welcome to the online store
+		<form action="Pay">
+			<input id="type" name="type" placeholder="type" />
+			<input id="id" name="id" placeholder="id" />
+			<input type="submit" id="submit" /> 
+		</form>
 	</div>
 </body>
 </html>

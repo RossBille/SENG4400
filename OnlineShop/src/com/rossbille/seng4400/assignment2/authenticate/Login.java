@@ -80,7 +80,7 @@ public class Login extends HttpServlet {
 			message.setText(m);
 			publisher.publish(message);
 			//System.out.println("Message sent: " + m);
-
+			
 			context.close();
 			tconnection.close();
 

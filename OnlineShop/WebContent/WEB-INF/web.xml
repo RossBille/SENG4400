@@ -10,11 +10,11 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
-	<servlet-name>Login</servlet-name>
-	<servlet-class>com.rossbille.seng4400.assignment2.authenticate.Login</servlet-class>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>com.rossbille.seng4400.assignment2.authenticate.Login</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>Login</servlet-name>
-  	<url-pattern>/Login</url-pattern>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
   </servlet-mapping>
 </web-app>

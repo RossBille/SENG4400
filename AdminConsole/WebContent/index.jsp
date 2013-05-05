@@ -33,6 +33,7 @@ while(count<=50 && count<events.size())
 	    		<td><%=count %><td><%=e.getDate() %></td><td><%=e.isSuccess() %></td>
 	    	</tr>
 <%
+System.out.println(e.isSuccess());
 	count++;
 }
 %>
