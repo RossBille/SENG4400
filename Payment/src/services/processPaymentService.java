@@ -10,14 +10,14 @@ public class processPaymentService
 	@WebMethod
 	public String processCard(String cardNo) 
 	{
-		System.out.println(cardNo);
-		return "";
+		System.out.println("Credit Card id: "+cardNo);
+		return "SUCCESS";
 	}
 	
 	@WebMethod
 	public String processPaypal(String paypalID)
 	{
-		System.out.println(paypalID);
-		return "";
+		System.out.println("Paypal id: "+paypalID);
+		return "SUCCESS";
 	}
 }

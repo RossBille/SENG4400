@@ -20,6 +20,8 @@ import com.rossbille.seng4400.assignment2.beans.Records;
 @WebListener
 public class Listener extends HttpServlet implements ServletContextListener, MessageListener 
 {
+
+	private static final long serialVersionUID = 1L;
 	private static ServletContextEvent e;
 	@Override
 	public void contextInitialized(ServletContextEvent event) 

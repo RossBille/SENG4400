@@ -8,10 +8,14 @@
 </head>
 <body>
 	<div>
-		Hi, welcome to the online store
-		<form action="Pay">
-			<input id="type" name="type" placeholder="type" />
-			<input id="id" name="id" placeholder="id" />
+		Hi, welcome to the online store!<br />
+		<%=session.getAttribute("lastResult") %>
+		<form action="Pay" method="POST">
+			<input type="radio" id="paypal" name="type" value="paypal"/>
+			<label for="paypal">PayPal</label>
+			<input type="radio" id="card" name="type" value="card"/>
+			<label for="card">Credit Card</label><br />
+			<input id="id" name="id" placeholder="id" /><br />
 			<input type="submit" id="submit" /> 
 		</form>
 	</div>

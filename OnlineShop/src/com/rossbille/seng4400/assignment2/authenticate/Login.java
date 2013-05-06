@@ -52,14 +52,8 @@ public class Login extends HttpServlet {
 		}
 	}
 
-	@Override
-	public void doGet(HttpServletRequest request, HttpServletResponse response) 
-	{
-		post("not posted");
-		System.out.println("not posted");
-	}
 
-	private boolean post(String m) 
+	private void post(String m) 
 	{
 		try 
 		{
@@ -79,18 +73,13 @@ public class Login extends HttpServlet {
 			TextMessage message = tsession.createTextMessage();
 			message.setText(m);
 			publisher.publish(message);
-			//System.out.println("Message sent: " + m);
 			
 			context.close();
 			tconnection.close();
-
-			//System.exit(0);
-			return true;
 		} 
 		catch (Exception e) 
 		{
 			e.printStackTrace();
-			return false;
 		}
 	}
 
