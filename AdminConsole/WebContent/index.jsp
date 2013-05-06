@@ -23,20 +23,21 @@ List<Event> events = records.getEvents();
    				<th>number</th><th>Time</th><th>Success</th>
  			</tr>
    		
-<% 
-Collections.sort(events);
-int count = 0;
-while(count<50 && count<events.size())
-{
-	Event e = events.get(count);%>
+			<% 
+			Collections.sort(events);
+			int count = 0;
+			while(count<50 && count<events.size())
+			{
+				Event e = events.get(count);
+			%>
 	    	<tr>
 	    		<td><%=count+1 %><td><%=e.getDate() %></td><td><%=e.isSuccess() %></td>
 	    	</tr>
-<%
-System.out.println(e.isSuccess());
-	count++;
-}
-%>
+			<%
+			System.out.println(e.isSuccess());
+				count++;
+			}
+			%>
     	</table>
     	<a href="index.jsp">Refresh</a>
     </div>
