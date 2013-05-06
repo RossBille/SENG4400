@@ -25,12 +25,12 @@ List<Event> events = records.getEvents();
    		
 <% 
 Collections.sort(events);
-int count = 1;
-while(count<=50 && count<events.size())
+int count = 0;
+while(count<50 && count<events.size())
 {
 	Event e = events.get(count);%>
 	    	<tr>
-	    		<td><%=count %><td><%=e.getDate() %></td><td><%=e.isSuccess() %></td>
+	    		<td><%=count+1 %><td><%=e.getDate() %></td><td><%=e.isSuccess() %></td>
 	    	</tr>
 <%
 System.out.println(e.isSuccess());
