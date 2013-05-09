@@ -11,7 +11,7 @@
 		Hi, welcome to the online store!<br />
 		<%=session.getAttribute("lastResult") %>
 		<form action="Pay" method="POST">
-			<input type="radio" id="paypal" name="type" value="paypal"/>
+			<input type="radio" id="paypal" name="type" value="paypal" checked="checked"/>
 			<label for="paypal">PayPal</label>
 			<input type="radio" id="card" name="type" value="card"/>
 			<label for="card">Credit Card</label><br />

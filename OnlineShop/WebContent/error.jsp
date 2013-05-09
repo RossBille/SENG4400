@@ -8,7 +8,8 @@
 </head>
 <body>
 	<div>
-		Something went wrong		
+		Something went wrong	
+		<a href="/OnlineShop">return</a>	
 	</div>
 </body>
 </html>

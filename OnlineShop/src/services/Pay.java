@@ -9,7 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.rpc.ServiceException;
 
-
+/**
+ * Servlet class used to call external payment methods
+ * Uses wsdl generated classes in this package to make the method call
+ * Servlet class doesnt implement doGet
+ * @author rossbille
+ *
+ */
 @WebServlet("/Pay")
 public class Pay extends HttpServlet 
 {
@@ -20,9 +26,10 @@ public class Pay extends HttpServlet
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		ProcessPaymentServiceService ppss = new ProcessPaymentServiceServiceLocator();
 		try 
 		{
+			//locate the 
+			ProcessPaymentServiceService ppss = new ProcessPaymentServiceServiceLocator();
 			String result = "Last payment returned result: ";
 			ProcessPaymentService ps = ppss.getprocessPaymentServicePort();
 			if(request.getParameter("type").equals("paypal"))
@@ -32,15 +39,17 @@ public class Pay extends HttpServlet
 				result += ps.processCard(request.getParameter("id"));
 			}
 			request.getSession().setAttribute("lastResult", result);
+			//redirect back to the store
 			response.sendRedirect("store.jsp");
 		} 
 		catch (ServiceException e) 
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+		catch (NullPointerException e) 
+		{
+			request.getSession().setAttribute("lastResult", "Please fill out all the fields");
+			response.sendRedirect("store.jsp");
+		}
 	}
-	
 }

@@ -14,22 +14,23 @@ public class Startup implements ServletContextListener {
     /**
      * Default constructor. 
      */
-    public Startup() {
-        // TODO Auto-generated constructor stub
+    public Startup() 
+    {
+    	
     }
 
 	/**
+	 * The console application for this assignment will record an event when it is started.
      * @see ServletContextListener#contextInitialized(ServletContextEvent)
      */
-    public void contextInitialized(ServletContextEvent sce) {
+    public void contextInitialized(ServletContextEvent sce) 
+    {
         System.out.println("Payment Service started");
     }
 
 	@Override
-	public void contextDestroyed(ServletContextEvent sce) {
-		// TODO Auto-generated method stub
+	public void contextDestroyed(ServletContextEvent sce) 
+	{
 		
 	}
-
-	
 }
