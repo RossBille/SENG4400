@@ -30891,26 +30891,26 @@ Whereas a
 				<integer>8</integer>
 			</dict>
 			<key>ID</key>
-			<integer>1918</integer>
+			<integer>1925</integer>
 			<key>Layer</key>
 			<integer>1</integer>
 			<key>Points</key>
 			<array>
-				<string>{351.81806277211888, 592.6829319990228}</string>
-				<string>{351.81788812423412, 517.27682165553176}</string>
+				<string>{351.81815930176742, 592.6829319990228}</string>
+				<string>{351.81815930176742, 517.27682165553176}</string>
 			</array>
 			<key>Style</key>
 			<dict>
 				<key>stroke</key>
 				<dict>
 					<key>HeadArrow</key>
-					<string>FilledArrow</string>
+					<string>0</string>
 					<key>Legacy</key>
 					<true/>
 					<key>LineType</key>
 					<integer>1</integer>
 					<key>TailArrow</key>
-					<string>0</string>
+					<string>FilledArrow</string>
 				</dict>
 			</dict>
 			<key>Tail</key>
@@ -31154,7 +31154,7 @@ Whereas a
 			<key>Head</key>
 			<dict>
 				<key>ID</key>
-				<integer>1883</integer>
+				<integer>1905</integer>
 			</dict>
 			<key>ID</key>
 			<integer>1907</integer>
@@ -31162,8 +31162,8 @@ Whereas a
 			<integer>1</integer>
 			<key>Points</key>
 			<array>
-				<string>{587.82930325171139, 241.53688346025291}</string>
-				<string>{484.82864238164183, 241.53688346025291}</string>
+				<string>{484.82864238164183, 241.53710860479097}</string>
+				<string>{587.82930325171139, 241.53760451017041}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -31182,7 +31182,7 @@ Whereas a
 			<key>Tail</key>
 			<dict>
 				<key>ID</key>
-				<integer>1905</integer>
+				<integer>1883</integer>
 			</dict>
 		</dict>
 		<dict>
@@ -32585,7 +32585,7 @@ jms/seng4400ass2PS
 					<key>LineType</key>
 					<integer>1</integer>
 					<key>TailArrow</key>
-					<string>0</string>
+					<string>FilledArrow</string>
 				</dict>
 			</dict>
 			<key>Tail</key>
@@ -32731,7 +32731,7 @@ jms/seng4400ass2PS
 			<key>Print</key>
 			<string>YES</string>
 			<key>View</key>
-			<string>YES</string>
+			<string>NO</string>
 		</dict>
 		<dict>
 			<key>Lock</key>
@@ -32745,7 +32745,7 @@ jms/seng4400ass2PS
 		</dict>
 		<dict>
 			<key>Lock</key>
-			<string>YES</string>
+			<string>NO</string>
 			<key>Name</key>
 			<string>Web_Servers</string>
 			<key>Print</key>
@@ -32755,7 +32755,7 @@ jms/seng4400ass2PS
 		</dict>
 		<dict>
 			<key>Lock</key>
-			<string>YES</string>
+			<string>NO</string>
 			<key>Name</key>
 			<string>Physical</string>
 			<key>Print</key>
@@ -32786,7 +32786,7 @@ jms/seng4400ass2PS
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2013-05-09 12:22:45 +0000</string>
+	<string>2013-05-09 12:39:28 +0000</string>
 	<key>Modifier</key>
 	<string>Ross Bille</string>
 	<key>NotesVisible</key>
@@ -32867,7 +32867,7 @@ jms/seng4400ass2PS
 			</dict>
 		</array>
 		<key>Frame</key>
-		<string>{{245, 4}, {775, 774}}</string>
+		<string>{{250, 4}, {775, 774}}</string>
 		<key>ListView</key>
 		<true/>
 		<key>OutlineWidth</key>
@@ -32881,15 +32881,15 @@ jms/seng4400ass2PS
 		<key>SidebarWidth</key>
 		<integer>120</integer>
 		<key>VisibleRegion</key>
-		<string>{{0, 102.1276598335014}, {665.95744849762366, 659.57446975802986}}</string>
+		<string>{{0, 28.915663232026741}, {754.21688263536407, 746.98796682735747}}</string>
 		<key>Zoom</key>
-		<real>0.93999999761581421</real>
+		<real>0.82999998331069946</real>
 		<key>ZoomValues</key>
 		<array>
 			<array>
 				<string>Canvas 1</string>
-				<real>0.93999999761581421</real>
-				<real>1.0399999618530273</real>
+				<real>0.82999998331069946</real>
+				<real>0.72000002861022949</real>
 			</array>
 		</array>
 	</dict>
