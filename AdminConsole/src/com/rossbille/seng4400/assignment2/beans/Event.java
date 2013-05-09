@@ -3,8 +3,14 @@ package com.rossbille.seng4400.assignment2.beans;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Comparator;
 
+/**
+ * Simple bean to hold login attempt information
+ * consisting of a time stamp of when the event occurred
+ * and a boolean representing whether the attempt was successful
+ * @author rossbille
+ *
+ */
 public class Event implements Serializable, Comparable<Event>
 {
 
@@ -19,7 +25,11 @@ public class Event implements Serializable, Comparable<Event>
 		this.success = success;
 	}
 	public Event(){}
-	
+	/**
+	 * Function to convert the time stamp into a readable date
+	 * @return 	String representation of the time this event was created
+	 * 			In the format dd/MM/yy - HH:mm
+	 */
 	public String getDate()
 	{
 		Calendar c = Calendar.getInstance();
@@ -44,7 +54,8 @@ public class Event implements Serializable, Comparable<Event>
 	}
 	@Override
 	//implements reverse order
-	public int compareTo(Event o) {
+	public int compareTo(Event o) 
+	{
 		return Long.compare(o.getTimeStamp(), this.timeStamp);
 	}	
 }

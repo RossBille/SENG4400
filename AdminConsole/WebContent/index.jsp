@@ -4,7 +4,9 @@
 <%@page import="com.rossbille.seng4400.assignment2.beans.Records"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
+//fetch records bean from application context
 Records records = (Records) getServletContext().getAttribute("records");
+//etract the list of events out of the bean
 List<Event> events = records.getEvents();
 %>
 <!DOCTYPE html>
@@ -24,8 +26,12 @@ List<Event> events = records.getEvents();
  			</tr>
    		
 			<% 
+			//sort the list
+			//due to backwards Event.compareTo(), these will be sorted in reverse order
+			//by their timestamps
 			Collections.sort(events);
 			int count = 0;
+			//print out the top 50 
 			while(count<50 && count<events.size())
 			{
 				Event e = events.get(count);

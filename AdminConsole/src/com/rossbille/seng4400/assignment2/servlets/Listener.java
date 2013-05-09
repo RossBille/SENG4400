@@ -14,7 +14,8 @@ import com.rossbille.seng4400.assignment2.beans.Records;
 
 /**
  * Application Lifecycle Listener implementation class Listener
- * 
+ * Starts the message listener when the application server has started up
+ * @author rossbille
  */
 
 @WebListener
@@ -29,33 +30,35 @@ public class Listener extends HttpServlet implements ServletContextListener, Mes
 		e = event;
 		Records records = new Records();
 		event.getServletContext().setAttribute("records", records);
-		try {
-			Properties props = new Properties();
-			props.put(Context.PROVIDER_URL, "iiop://127.0.0.1:3700");
+		try 
+		{
+			Properties p = new Properties();
+			p.put(Context.PROVIDER_URL, "iiop://127.0.0.1:3700");
 
-			Context context = new InitialContext(props);
-			TopicConnectionFactory tfactory = (TopicConnectionFactory) context
+			Context context = new InitialContext(p);
+			TopicConnectionFactory tf = (TopicConnectionFactory) context
 					.lookup("jms/myConnectionFactory");
 
-			TopicConnection tconnection = tfactory.createTopicConnection();
-			TopicSession tsession = tconnection.createTopicSession(false,
+			TopicConnection tc = tf.createTopicConnection();
+			TopicSession ts = tc.createTopicSession(false,
 					Session.AUTO_ACKNOWLEDGE);
-			TopicSubscriber subscriber = tsession
-					.createSubscriber((Topic) context
-							.lookup("jms/seng4400ass2PS"));
+			TopicSubscriber subscriber = ts.createSubscriber((Topic) context.lookup("jms/seng4400ass2PS"));
 
 			subscriber.setMessageListener(this);
 
-			tconnection.start();
+			tc.start();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void onMessage(Message message) {
-		if (message instanceof TextMessage) {
+	public void onMessage(Message message) 
+	{
+		if (message instanceof TextMessage) 
+		{
 			TextMessage tm = (TextMessage) message;
-			try {
+			try 
+			{
 				boolean success;
 				if(tm.getText().equals("success"))
 				{
@@ -65,7 +68,6 @@ public class Listener extends HttpServlet implements ServletContextListener, Mes
 				}
 				
 				Records records = (Records) e.getServletContext().getAttribute("records");
-				//Records records = (Records) getServletContext().getAttribute("records");
 				records.getEvents().add(new Event(System.currentTimeMillis(),success));
 				System.out.println(((TextMessage) message).getText());
 			} catch (Exception e) {
