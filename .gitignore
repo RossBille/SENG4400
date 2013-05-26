@@ -3,6 +3,6 @@
 # Package Files #
 *.war
 *.ear
-.metadata
 glassfish3122eclipsedefaultdomain
 RemoteSystemsTempFiles
+.metadata
