@@ -4,6 +4,7 @@
 *.war
 *.ear
 .metadata
+<<<<<<< HEAD
 AdminConsole/.settings
 OnlineShop/.settings
 glassfish3122eclipsedefaultdomain
@@ -13,3 +14,7 @@ Payment/.settings
 OnlineShopEAR
 MyGAEProject/.settings
 GAE_Rest_Client/.settings
+=======
+glassfish3122eclipsedefaultdomain
+RemoteSystemsTempFiles
+>>>>>>> master
