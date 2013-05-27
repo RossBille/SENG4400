@@ -31,10 +31,11 @@ public class Payment extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ClientResource cr = new ClientResource("http://localhost:8888/sample_rest");
-		Sample_gapRESTObj obj = cr.get(Sample_gapRESTObj.class);
+		//Sample_gapRESTObj obj = cr.get(Sample_gapRESTObj.class);
+		String str = cr.get(String.class);
 		PrintWriter out = response.getWriter();
-		System.out.println(obj.toString());
-		out.println(obj.toString());
+		System.out.println(str.toString());
+		out.println(str.toString());
 	}
 
 	/**
