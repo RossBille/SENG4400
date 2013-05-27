@@ -6,7 +6,8 @@ public class SampleRESTObject {
 	@Override
 	public String toString()
 	{
-		return "type=paypal&id=qq";
+		//return "type=paypal&id=qq";
+		return "type="+type+"&id="+id;
 		//return "{\"id\":\""+id+"\",\"type\":\""+type+"\"}";
 	}
 }

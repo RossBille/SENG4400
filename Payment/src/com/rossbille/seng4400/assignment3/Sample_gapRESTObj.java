@@ -6,7 +6,7 @@ public class Sample_gapRESTObj {
 	@Override
 	public String toString()
 	{
-		return "type=paypal&id=qq";
+		return "type="+type+"&id="+id;
 
 		//return "{\"id\":\""+id+"\",\"type\":\""+type+"\"}";
 	}
