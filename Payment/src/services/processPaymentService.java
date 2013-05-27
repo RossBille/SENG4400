@@ -1,9 +1,5 @@
 package services;
-import javax.jws.WebMethod;
-import javax.jws.WebService;
 
-
-@WebService
 public class processPaymentService
 {
 	/**
@@ -11,7 +7,6 @@ public class processPaymentService
 	 * @param cardNo 	an ID for the credit card
 	 * @return SUCCESS or ERROR respectively
 	 */
-	@WebMethod
 	public String processCard(String cardNo) 
 	{
 		//small and weak server-side validation
@@ -29,7 +24,6 @@ public class processPaymentService
 	 * @param paypalID 	an ID for the paypal account
 	 * @return SUCCESS or ERROR respectively
 	 */
-	@WebMethod
 	public String processPaypal(String paypalID)
 	{
 		//small and weak server-side validation

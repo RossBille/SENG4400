@@ -3,9 +3,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript" src="jQuery.js"></script>
-
-
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>Logged in</title>
 </head>
