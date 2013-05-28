@@ -9,8 +9,9 @@ import org.restlet.resource.ClientResource;
 public class MyThread implements Runnable
 {
 	private final ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
+	private ClientResource cr = new ClientResource("http://localhost:8888/sample_rest");
 	public void start() 
-	{
+	{		
 		run();
 	}
 	@Override
@@ -19,7 +20,7 @@ public class MyThread implements Runnable
 		//System.out.println("hello");
 		//poll for new transactions
 		System.out.println("polling");
-		ClientResource cr = new ClientResource("http://localhost:8888/sample_rest");
+		
 		String str = cr.get(String.class);
 		//check if null
 		
@@ -30,7 +31,6 @@ public class MyThread implements Runnable
 		
 		//schedule 
 		scheduler.schedule(this, 1, TimeUnit.SECONDS);
-		
 	}
-	
+
 }
