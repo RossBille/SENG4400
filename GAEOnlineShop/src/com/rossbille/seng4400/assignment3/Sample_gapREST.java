@@ -24,17 +24,20 @@ public class Sample_gapREST extends ServerResource {
 		
 		Queue q = QueueFactory.getQueue("pull-queue");
 		List<TaskHandle> tasks = q.leaseTasks(100,TimeUnit.MILLISECONDS,1);
-		
-		List<java.util.Map.Entry<java.lang.String,java.lang.String>> list = tasks.get(0).extractParams();
-		System.out.println(list.get(1).getValue().toString());
-		SampleRESTObject obj = new SampleRESTObject();
-		obj.id=list.get(1).getValue().toString();
-		obj.type=list.get(0).getValue().toString();
-		q.deleteTask(tasks.get(0));
-		System.out.println("clear the list");
-		System.out.println(tasks.get(0).getPayload().toString());
-		//return tasks.get(0).getPayload().toString();
-		return obj.toString();
+		if(!tasks.isEmpty())
+		{
+			List<java.util.Map.Entry<java.lang.String,java.lang.String>> list = tasks.get(0).extractParams();
+			System.out.println(list.get(1).getValue().toString());
+			SampleRESTObject obj = new SampleRESTObject();
+			obj.id=list.get(1).getValue().toString();
+			obj.type=list.get(0).getValue().toString();
+			q.deleteTask(tasks.get(0));
+			System.out.println("clear the list");
+			System.out.println(tasks.get(0).getPayload().toString());
+			//return tasks.get(0).getPayload().toString();
+			return obj.toString();
+		}
+		return "empty";
 	}
 
 	@Put
