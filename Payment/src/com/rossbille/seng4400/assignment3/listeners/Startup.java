@@ -1,4 +1,4 @@
-package listeners;
+package com.rossbille.seng4400.assignment3.listeners;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -30,7 +30,7 @@ public class Startup implements ServletContextListener
     }
 
 	/**
-	 * The console application for this assignment will record an event when it is started.
+	 * Starts up a background thread that will poll the google app for payment details
      * @see ServletContextListener#contextInitialized(ServletContextEvent)
      */
     private Thread myThread = null;
@@ -43,15 +43,13 @@ public class Startup implements ServletContextListener
     		myThread = new Thread(new MyThread());
     		myThread.start();
     	}
-        //myThread.run();
-        //MyThread myThread = new MyThread();
-        //myThread.start();
     }
 
 	@Override
 	public void contextDestroyed(ServletContextEvent sce) 
 	{
-		try{
+		try
+		{
 			myThread.interrupt();
 		}
 		catch (Exception e)
@@ -59,6 +57,5 @@ public class Startup implements ServletContextListener
 			
 		}
 		System.out.println("stopped thread");
-	}
-	
+	}	
 }
