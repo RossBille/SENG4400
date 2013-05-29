@@ -24,8 +24,7 @@ public class MyThread implements Runnable
 		if(payment != null)
 		{
 			System.out.println(payment);
-		}
-		
+		}		
 		//schedule 
 		scheduler.schedule(this, 1, TimeUnit.SECONDS);
 	}

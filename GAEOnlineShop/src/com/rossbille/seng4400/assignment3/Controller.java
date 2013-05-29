@@ -17,7 +17,8 @@ import com.google.appengine.api.taskqueue.TaskOptions;
 
 import static com.google.appengine.api.taskqueue.TaskOptions.Builder.*;
 
-public class Controller extends ServerResource {
+public class Controller extends ServerResource 
+{
 	@Get
 	public Payment retrieve() throws UnsupportedEncodingException, UnsupportedOperationException {
 		
@@ -43,7 +44,8 @@ public class Controller extends ServerResource {
 	}
 
 	@Put
-	public void store(Payment payment) {
+	public void store(Payment payment) 
+	{
 		System.out.println(payment.toString());
 		Queue q = QueueFactory.getQueue("pull-queue");
 		q.add(TaskOptions.Builder.withMethod(TaskOptions.Method.PULL).payload(payment.toString()));

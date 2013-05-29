@@ -1,15 +1,8 @@
 package com.rossbille.seng4400.assignment3.listeners;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.TimeUnit;
-
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
-
-import org.restlet.resource.ClientResource;
 
 import com.rossbille.seng4400.assignment3.MyThread;
 

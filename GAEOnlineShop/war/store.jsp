@@ -9,7 +9,6 @@
 <body>
 	<div>
 		Hi, welcome to the online store!<br />
-		<%=session.getAttribute("lastResult")%>
 		<form
 			action="Pay" method="POST" id="form">
 			<input type="radio" id="paypal" name="type" value="paypal"

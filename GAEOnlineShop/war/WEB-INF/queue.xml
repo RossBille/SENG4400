@@ -3,9 +3,5 @@
   <queue>
   	<name>pull-queue</name>
   	<mode>pull</mode>
-  	<acl>
-  		<user-email>rossjbille@gmail.com</user-email>
-  		<writer-email>rossjbille@gmail.com</writer-email>
-  	</acl>
   </queue>
 </queue-entries>

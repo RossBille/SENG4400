@@ -8,9 +8,7 @@ public class Payment implements java.io.Serializable
 	@Override
 	public String toString()
 	{
-		//return "type=paypal&id=qq";
 		return "type="+type+"&id="+id;
-		//return "{\"id\":\""+id+"\",\"type\":\""+type+"\"}";
 	}
 
 	public String getType()

@@ -9,7 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.logging.*;
+import java.util.logging.Logger;
 
 /**
  * Servlet to deal with authentication
@@ -18,7 +18,7 @@ import java.util.logging.*;
  * 		password: User
  * 		username: Admin 
  * 		password: Admin
- * Only ha an implementation of doPost.
+ * Only has an implementation of doPost.
  * @author rossbille
  *
  */
@@ -43,21 +43,21 @@ public class Login extends HttpServlet
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		//server-side check
-		try{
+		try
+		{
 			if (usernames.get(username).equals(password)) 
 			{
-				logger.info("success");
-				request.getSession().setAttribute("lastResult", "No purchases have been processed this session.");
+				logger.info(System.currentTimeMillis()+": Successful login attempt!");
 				response.sendRedirect("store.jsp");
 			}else{
-				logger.info("wrong password");
+				logger.info(System.currentTimeMillis()+": Unsuccessful loin attempt!");
 				response.sendRedirect("error.jsp");
 			}
 		}
 		//if null then one of the fields is missing
 		catch(NullPointerException e)
 		{
-			logger.info("error");
+			logger.info(System.currentTimeMillis()+": Unsuccessful loin attempt!");
 			response.sendRedirect("error.jsp");
 		}
 	}
