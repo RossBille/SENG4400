@@ -8,6 +8,8 @@
     	<title>GlassFish JSP Page</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <h1>Payment System</h1>
+    <p>Sorry, no web-interface at this time!</p>
+    
   </body>
 </html> 

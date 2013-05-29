@@ -1,0 +1,7 @@
+<queue-entries>
+  <total-storage-limit>500M</total-storage-limit>
+  <queue>
+  	<name>pull-queue</name>
+  	<mode>pull</mode>
+  </queue>
+</queue-entries>
