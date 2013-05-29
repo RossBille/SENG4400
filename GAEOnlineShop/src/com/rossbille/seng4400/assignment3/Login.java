@@ -50,14 +50,14 @@ public class Login extends HttpServlet
 				logger.info(System.currentTimeMillis()+": Successful login attempt!");
 				response.sendRedirect("store.jsp");
 			}else{
-				logger.info(System.currentTimeMillis()+": Unsuccessful loin attempt!");
+				logger.info(System.currentTimeMillis()+": Unsuccessful login attempt!");
 				response.sendRedirect("error.jsp");
 			}
 		}
 		//if null then one of the fields is missing
 		catch(NullPointerException e)
 		{
-			logger.info(System.currentTimeMillis()+": Unsuccessful loin attempt!");
+			logger.info(System.currentTimeMillis()+": Unsuccessful login attempt!");
 			response.sendRedirect("error.jsp");
 		}
 	}

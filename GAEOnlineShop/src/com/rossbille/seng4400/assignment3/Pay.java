@@ -13,6 +13,7 @@ public class Pay extends HttpServlet
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * retrieve the post data and place into an object to get added to the TaskQueue
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 

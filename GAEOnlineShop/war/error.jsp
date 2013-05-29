@@ -9,7 +9,7 @@
 <body>
 	<div>
 		Something went wrong	
-		<a href="/OnlineShop">return</a>	
+		<a href="/">return</a>	
 	</div>
 </body>
 </html>

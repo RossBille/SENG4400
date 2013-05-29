@@ -10,7 +10,7 @@ public class MyThread implements Runnable
 {
 	private final ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
 	//get a reference when the thread starts and not every time it is run
-	private ClientResource cr = new ClientResource("http://localhost:8888/sample_rest");
+	private ClientResource cr = new ClientResource("http://localhost:8888/get_payment_details");
 	public void start() 
 	{		
 		run();

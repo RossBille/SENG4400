@@ -8,7 +8,7 @@ import com.rossbille.seng4400.assignment3.MyThread;
 
 /**
  * Application Lifecycle Listener implementation class Startup
- *
+ * Starts up a background thread to poll a remote application
  */
 @WebListener
 public class Startup implements ServletContextListener 
@@ -32,7 +32,6 @@ public class Startup implements ServletContextListener
         System.out.println("Payment Service started");
         if((myThread == null ) || (!myThread.isAlive()))
     	{
-        	System.out.println("started thread");
     		myThread = new Thread(new MyThread());
     		myThread.start();
     	}
