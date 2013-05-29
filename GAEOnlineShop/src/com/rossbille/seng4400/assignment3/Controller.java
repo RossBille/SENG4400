@@ -17,41 +17,36 @@ import com.google.appengine.api.taskqueue.TaskOptions;
 
 import static com.google.appengine.api.taskqueue.TaskOptions.Builder.*;
 
-public class Sample_gapREST extends ServerResource {
-	private static volatile SampleRESTObject obj = new SampleRESTObject();
+public class Controller extends ServerResource {
 	@Get
-	public String retrieve() throws UnsupportedEncodingException, UnsupportedOperationException {
+	public Payment retrieve() throws UnsupportedEncodingException, UnsupportedOperationException {
 		
+		//get a reference to the qeue
 		Queue q = QueueFactory.getQueue("pull-queue");
+		//lease the next task
 		List<TaskHandle> tasks = q.leaseTasks(100,TimeUnit.MILLISECONDS,1);
+		//empty check
 		if(!tasks.isEmpty())
 		{
+			//get the list of key:value pairs from the task
 			List<java.util.Map.Entry<java.lang.String,java.lang.String>> list = tasks.get(0).extractParams();
-			System.out.println(list.get(1).getValue().toString());
-			SampleRESTObject obj = new SampleRESTObject();
-			obj.id=list.get(1).getValue().toString();
-			obj.type=list.get(0).getValue().toString();
+			//make a new payment object with the above parameters
+			Payment payment = new Payment();
+			payment.setId(list.get(1).getValue().toString());
+			payment.setType(list.get(0).getValue().toString());
+			//delete the task from the queue
 			q.deleteTask(tasks.get(0));
-			System.out.println("clear the list");
-			System.out.println(tasks.get(0).getPayload().toString());
-			//return tasks.get(0).getPayload().toString();
-			return obj.toString();
+			//send to the client
+			return payment;
 		}
-		return "empty";
+		return null;
 	}
 
 	@Put
-	public void store(SampleRESTObject myObj) {
-		System.out.println(myObj.toString());
+	public void store(Payment payment) {
+		System.out.println(payment.toString());
 		Queue q = QueueFactory.getQueue("pull-queue");
-		q.add(TaskOptions.Builder.withMethod(TaskOptions.Method.PULL)
-				.payload(myObj.toString()));
-		
+		q.add(TaskOptions.Builder.withMethod(TaskOptions.Method.PULL).payload(payment.toString()));
 		System.out.println("new object added");
-	}
-	@Post
-	public void something(final String input)
-	{
-		System.out.println(input);
 	}
 }

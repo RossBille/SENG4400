@@ -17,11 +17,16 @@ public class Pay extends HttpServlet
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		SampleRESTObject obj = new SampleRESTObject();
-		obj.id = request.getParameter("id");
-		obj.type = request.getParameter("type");
-		Sample_gapREST gap = new Sample_gapREST();
-		gap.store(obj);
+		//create new payment object
+		Payment payment = new Payment();
+		//with post parameters
+		payment.setId(request.getParameter("id"));
+		payment.setType(request.getParameter("type"));
+		//get a reference to the Controller servlet
+		Controller controller = new Controller();
+		//store the payment 
+		controller.store(payment);
+		//redirect user back to the store
 		response.sendRedirect("store.jsp");
 	}
 }
